@@ -19,46 +19,7 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Sriracha&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --light-background: #F8F1FF;
-      --dark-background: #656176;
-      --btn-highlight: #DECDF5;
-      --dark-text: #534D56;
-      --light-text: #F8F1FF;
-      --body-font: 'Chilanka', cursive;
-      --title-font: 'Sriracha', cursive;
-    }
-
-    .banner {
-      background-image: url("https://images.unsplash.com/photo-1567539549213-cc1697632146?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
-    }
-
-    .banner h1 {
-      color: var(--light-text);
-      text-shadow: 0px 0px 5px var(--dark-text);
-    }
-    .banner h1{
-      font-family: var(--title-font);
-    }
-
-    html {
-      font-family: var(--body-font);
-    }
-
-    .navbar-brand {
-      font-family: var(--title-font);
-    }
-    .card {
-      font-family: var(--body-font);
-    }.card h1{
-      font-family: var(--title-font);
-    }
-
-    .navbar {
-      font-family: var(--body-font);
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body style="display:flex; height:100vh; flex-direction:column;">
@@ -112,39 +73,7 @@
   <footer style="text-align:center; padding-bottom:15px;">
     &copy; Copyright 2020
   </footer>
-  <script type="text/javascript">
-
-    $(".submit").on("click", function (event) {
-      event.preventDefault();
-
-      // Here we grab the form elements
-      var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
-      };
-
-      $.post("/api/tables", newReservation,
-        function (data) {
-
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
-
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
-
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
-        });
-    });
+  <script type="text/javascript" src="assets/js/reserve.js">
   </script>
 </body>
 
